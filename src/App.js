@@ -61,7 +61,6 @@ export default class App extends React.Component {
     try{
       await audio.play();
       } catch (e){
-       if(!event.key){console.log(event)}
        return console.log(event.key + ' is not a valid key!');
       }
     
@@ -96,7 +95,6 @@ export default class App extends React.Component {
           </Button>;
         
         if(i >= 0 && i <= 2){
-          console.log(this.rows[i]);
           render_rows.first.push(button);
         } else if(i >= 3 && i <= 5){
           render_rows.second.push(button);
@@ -106,7 +104,7 @@ export default class App extends React.Component {
       }
     
     return (
-      <Row>
+      <Row id="app">
         <Col>
           <Container>
             <Card>
