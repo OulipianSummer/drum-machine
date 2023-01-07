@@ -43,7 +43,6 @@ export default class App extends React.Component {
     let targetID = event.target.innerText;
     
     let recentKey = targetID;
-    let row;
     this.rows.forEach(ele => {
       if(ele.key === recentKey){
         this.setState({recentKey: ele.name});
@@ -79,7 +78,7 @@ export default class App extends React.Component {
             data-key={this.rows[i].key}
             id={this.rows[i].name.toLowerCase().replace(/ /g, '_')}
             className='drum-pad'
-            key={`${this.rows[i]}_button`}
+            key={`${this.rows[i].name}_button`}
             onClick={(event)=>(this.handleButtonPress(event))}
            >
            <audio preload="auto" className="clip" id={this.rows[i].key} src={this.rows[i].src}>
